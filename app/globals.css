@@ -2,32 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.active-Link {
+    border-bottom: 2px solid #d09423;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.header-bg {
+    background: linear-gradient(to bottom, #264d51, #3b6165);
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.swiper-pagination-bullet {
+    padding: 7px !important;
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.swiper-pagination-bullet-active {
+    padding: 7px !important;
+    width: 55px !important;
+    border-radius: 10px !important;
+    background-color: #2d5356 !important;
+}
+
+.swiper-button-lock,
+.swiper-pagination-lock {
+    display: inline !important;
 }
