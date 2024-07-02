@@ -50,13 +50,13 @@ function HeaderContent() {
                     </div>
                     <div className=''>
                         <div className='grid grid-cols-5 gap-3 '>
-                            <div className='col-span-3 h-[34rem] mb-[90px]'>
+                            <div className='col-span-3 h-[35rem] mb-[90px]'>
                                 <Image src={Bedroom} className='w-full h-full rounded-lg' />
                             </div>
-                            <div className='col-span-1 h-[34rem] '>
+                            <div className='col-span-1 h-[35rem] '>
                                 <Image src={Livingroom} className='w-full h-full rounded-lg' />
                             </div>
-                            <div className='col-span-1 h-[34rem]'>
+                            <div className='col-span-1 h-[35rem]'>
                                 <Image src={Waitingroom} className='w-full h-full rounded-lg' />
                             </div>
                         </div>

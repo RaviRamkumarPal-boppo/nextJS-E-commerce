@@ -10,6 +10,7 @@ import Chair from '@/public/pal/chair.png'
 import Lamp from '@/public/pal/lamp.png'
 import FurnitureCategory from '@/components/furnitureCategory'
 import TrendingProducts from '@/components/trendingProducts'
+import TypeSection2 from '@/components/TypeSection2'
 
 
 function TypeSection() {
@@ -137,6 +138,7 @@ function TypeSection() {
                 </div>
                 <FurnitureCategory />
                 <TrendingProducts />
+                <TypeSection2 />
             </div>
         </div>
 
