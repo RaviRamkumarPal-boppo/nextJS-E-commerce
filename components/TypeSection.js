@@ -10,41 +10,43 @@ import Chair from '@/public/pal/chair.png'
 import Lamp from '@/public/pal/lamp.png'
 import FurnitureCategory from '@/components/furnitureCategory'
 import TrendingProducts from '@/components/trendingProducts'
+import ExploreBlogs from '@/components/exploreBlogs'
 import TypeSection2 from '@/components/TypeSection2'
+import Clientsection from '@/components/clientsection'
 
 
 function TypeSection() {
     return (
         <div className='py-10 flex justify-center'>
-            <div className='w-10/12'>
+            <div className='w-full px-4 sm:w-10/12 '>
 
                 <div className=' my-[80px]'>
-                    <div className='grid grid-cols-4 text-[#3b3836]'>
-                        <div >
+                    <div className='sm:grid sm:grid-cols-4 sm:text-[#3b3836]'>
+                        <div className='flex md:block items-center space-x-2'>
                             <p ><FiTruck className='bg-[#ffa906] text-5xl p-3 my-4 rounded-full' /></p>
-                            <p className='text-4xl font-medium'>Fast & Free Shipping</p>
+                            <p className='text-xl lg:text-4xl font-medium'>Fast & Free Shipping</p>
                         </div>
-                        <div>
+                        <div className='flex md:block items-center space-x-2'>
                             <p><IoBagHandleOutline className='bg-[#ffa906] text-5xl p-3 my-4 rounded-full' /></p>
-                            <p className='text-4xl font-medium'>Easy to Shop</p>
+                            <p className='text-xl lg:text-4xl font-medium'>Easy to Shop</p>
                         </div>
-                        <div>
+                        <div className='flex md:block items-center space-x-2'>
                             <p><HiOutlineSupport className='bg-[#ffa906] text-5xl p-3 my-4 rounded-full' /></p>
-                            <p className='text-4xl font-medium'>24/7 Support</p>
+                            <p className='text-xl lg:text-4xl font-medium'>24/7 Support</p>
                         </div>
-                        <div>
+                        <div className='flex md:block items-center space-x-2'>
                             <p><CgArrowsExchange className='bg-[#ffa906] text-5xl p-3 my-4 rounded-full' /></p>
-                            <p className='text-4xl font-medium'>Hassle Free Returns</p>
+                            <p className='text-xl lg:text-4xl font-medium'>Hassle Free Returns</p>
                         </div>
                     </div>
                 </div>
 
-                <div className='grid grid-cols-5 gap-5 '>
-                    <div className='col-span-3 rounded-lg'>
+                <div className='grid grid-cols-1 lg:grid-cols-5 lg:gap-5 '>
+                    <div className='col-span-1 lg:col-span-3 rounded-lg'>
 
-                        <div className='grid grid-rows-2 gap-5'>
+                        <div className='grid grid-cols-1 lg:grid-rows-2 gap-5'>
                             <div className='row-span-1 rounded-lg bg-[#f5f5f5]'>
-                                <div className='grid grid-cols-3 p-8'>
+                                <div className='grid grid-cols-1 lg:grid-cols-3 p-8'>
 
                                     <div className='col-span-1'>
                                         <p className='my-3'>
@@ -69,10 +71,10 @@ function TypeSection() {
                             </div>
                             <div className='row-span-1'>
 
-                                <div className='grid grid-cols-2 gap-5'>
+                                <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                                     <div className='col-span-1 rounded-lg bg-[#f5f5f5]'>
 
-                                        <div className='grid grid-cols-2 p-8'>
+                                        <div className='grid grid-cols-1 lg:grid-cols-2 p-8'>
 
                                             <div className='col-span-1'>
                                                 <p className='my-3'>
@@ -92,13 +94,13 @@ function TypeSection() {
                                             </div>
 
                                             <div className='col-span-1'>
-                                                <Image src={Lamp} className='bg-transparent h-full' />
+                                                <Image src={Lamp} className='bg-transparent h-full mx-auto' />
                                             </div>
                                         </div>
 
                                     </div>
                                     <div className='col-span-1 header-bg rounded-lg flex justify-center items-center text-white'>
-                                        <div className=''>
+                                        <div className='py-3 '>
                                             <p className='bg-[#ffa906] text-center font-medium py-2 px-4 border-white rounded-full mb-3'>
                                                 GET DISCOUNT
                                             </p>
@@ -111,7 +113,7 @@ function TypeSection() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-span-2 bg-[#f5f5f5] rounded-lg bg-[#f5f5f5]'>
+                    <div className='col-span-1 lg:col-span-2 bg-[#f5f5f5] rounded-lg bg-[#f5f5f5]'>
 
                         <div className='p-5'>
                             <p className='my-3'>
@@ -128,7 +130,7 @@ function TypeSection() {
                                 View All&#160;<FaArrowRightLong />
                             </p>
 
-                            <div className='w-[300px] h-[400px] float-end'>
+                            <div className='w-[200px] h-[300px] lg:w-[300px] lg:h-[400px] float-end'>
                                 <Image src={Chair} className='w-full h-full' />
                             </div>
                         </div>
@@ -136,9 +138,12 @@ function TypeSection() {
                     </div>
 
                 </div>
+        
                 <FurnitureCategory />
                 <TrendingProducts />
                 <TypeSection2 />
+                <Clientsection />
+                <ExploreBlogs />
             </div>
         </div>
 

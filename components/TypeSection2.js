@@ -7,12 +7,11 @@ import bookshelf from '@/public/pal/bookshelf.jpg'
 import Livingroom from '@/public/pal/livingroom.jpg'
 
 
-
 function TypeSection2() {
     return (
         <>
             <div className='my-10'>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='hidden sm:grid sm:grid-cols-3 sm:gap-5'>
                     <div className='col-span-2 rounded-2xl bg-[#f5f5f5] p-5'>
                         <div className='flex justify-between items-center p-5 mt-5'>
                             <div className='w-6/12'>
@@ -87,10 +86,35 @@ function TypeSection2() {
                     </div>
                 </div>
 
+                <div className='sm:hidden grid grid-rows-2 gap-5'>
+                    <div className='row-span-1 rounded-2xl bg-[#f5f5f5] p-5'>
+                        <div>
+                            <Image src={Table} alt='table' />
+                            <div className='flex justify-between items-center mt-3'>
+                                <p className='font-medium'>Rustic Coffee Table</p>
+                                <button className="bg-[#ffa906] text-center text-white font-medium py-3 px-5 border-white rounded-full custom-swiper-button-next">
+                                    <FaArrowRightLong />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='row-span-1 rounded-2xl bg-[#f5f5f5] p-5'>
+                        <div>
+                            <Image src={bookshelf} alt='bookshelf' />
+                            <div className='flex justify-between items-center mt-3'>
+                                <p className='font-medium'>Modern Bookshelf</p>
+                                <button className="bg-[#ffa906] text-center text-white font-medium py-3 px-5 border-white rounded-full custom-swiper-button-next">
+                                    <FaArrowRightLong />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
             <div className='my-[100px]'>
-                <div className='grid grid-cols-2 gap-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <div className='col-span-1'>
                         <div className="relative h-[500px] rounded-2xl">
                             <Image

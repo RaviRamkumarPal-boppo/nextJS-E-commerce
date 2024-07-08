@@ -1,19 +1,25 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 .active-Link {
-    border-bottom: 2px solid #d09423;
+    border-bottom: 3px solid #d09423;
+    font-weight: 500;
 }
 
-.header-bg {
+.mobile-active-Link {
+    font-weight: 500;
+    background-color: #3b6165;
+}
+
+.header-bg,
+.footer-bg {
     background: linear-gradient(to bottom, #264d51, #3b6165);
 }
 
 .swiper-pagination-bullet {
     padding: 7px !important;
-
 }
 
 .swiper-pagination-bullet-active {
@@ -23,7 +29,48 @@
     background-color: #2d5356 !important;
 }
 
-.swiper-button-lock,
-.swiper-pagination-lock {
-    display: inline !important;
+@media (min-width: 426px) {
+    .header-section-image {
+        .header-image-1,
+        .header-image-2,
+        .header-image-3 {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .header-image-1:hover {
+            width: 500px;
+        }
+
+        .header-image-1:hover .header-image-2 {
+            width: 100px;
+        }
+
+        .header-image-1:hover .header-image-3 {
+            width: 100px;
+        }
+
+        .header-image-2:hover .header-image-1 {
+            width: 100px;
+        }
+
+        .header-image-2:hover {
+            width: 500px;
+        }
+
+        .header-image-2:hover .header-image-3 {
+            width: 100px;
+        }
+
+        .header-image-3:hover .header-image-1 {
+            width: 100px;
+        }
+
+        .header-image-3:hover .header-image-2 {
+            width: 100px;
+        }
+
+        .header-image-3:hover {
+            width: 500px;
+        }
+    }
 }

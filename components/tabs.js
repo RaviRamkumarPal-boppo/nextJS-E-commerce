@@ -6,8 +6,8 @@ const Tabs = ({tabData}) => {
   const [activeTab, setActiveTab] = useState('Bed Room');
 
   return (
-    <div className='mt-8 mb-5'>
-      <ul className='text-[#2c4c51] flex'>
+    <div className='mt-8 mb-5 overflow-x-auto whitespace-nowrap	'>
+      <ul className='text-[#2c4c51] flex py-3'>
         {tabData?.map((tab) => (
           <li
             key={tab}

@@ -10,11 +10,10 @@ import Image from 'next/image';
 
 const SwiperComponents = ({ slides }) => {
     useEffect(() => {
-        // Initialize Swiper
         const swiper = new Swiper('.swiper', {
             modules: [Navigation, Pagination],
             direction: 'horizontal',
-            loop: true,
+            loop: false, 
             slidesPerView: 5,
             spaceBetween: 50,
             pagination: {
