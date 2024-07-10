@@ -2,10 +2,12 @@ import React from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import Tabs from './tabs'
 import ProductsCards from './productsCards'
+import productObj from '@/components/modules/JSON'
 
 
 
 function trendingProducts() {
+
 
     const tabProduct = ['Bed Room', 'Living Room', 'Dining Room', 'Outdoor', 'Indoor'];
 
@@ -23,7 +25,10 @@ function trendingProducts() {
 
             <Tabs tabData={tabProduct} />
 
-            <ProductsCards />
+            <ProductsCards 
+            productData={productObj?.productObj} 
+            imageStyle={'w-[270px] h-[300px] object-cover'}
+            />
 
 
         </div>
