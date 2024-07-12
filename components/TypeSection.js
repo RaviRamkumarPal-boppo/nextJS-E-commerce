@@ -8,11 +8,12 @@ import { IoBagHandleOutline } from 'react-icons/io5'
 import Table from '@/public/pal/table.png'
 import Chair from '@/public/pal/chair.png'
 import Lamp from '@/public/pal/lamp.png'
-import FurnitureCategory from '@/components/furnitureCategory'
 import TrendingProducts from '@/components/trendingProducts'
 import ExploreBlogs from '@/components/exploreBlogs'
 import TypeSection2 from '@/components/TypeSection2'
 import Clientsection from '@/components/clientsection'
+import data from '@/components/modules/JSON';
+import FurnitureCategory from './furnitureCategory'
 
 
 function TypeSection() {
@@ -134,12 +135,13 @@ function TypeSection() {
                                 <Image src={Chair} className='w-full h-full' />
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-        
-                <FurnitureCategory />
+
+                <FurnitureCategory 
+                productObj={data?.categoryObj}
+                title={'Featured Categories'}
+                />
                 <TrendingProducts />
                 <TypeSection2 />
                 <Clientsection />

@@ -12,11 +12,14 @@ import { GoHeart } from 'react-icons/go';
 import { IoBagHandleOutline } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { usePathname } from 'next/navigation';
+import useStateStore from "@/components/zustand";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 function HeaderContent() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const { quantity, wishlistCount, cart } = useStateStore();
 
     const navLinks = useMemo(() => [
         { href: '/', label: 'Home' },
@@ -49,17 +52,21 @@ function HeaderContent() {
                         </div>
 
                         <div>
-                            <ul className='flex'>
+                            <ul className='flex '>
                                 <button
-                                    className="sm:hidden text-xl p-2"
+                                    className="sm:hidden text-xl p-2 hover:bg-[#2f757c]"
                                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                 >
                                     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                                 </button>
-                                <li className='p-2'><Link href="/search"><CiSearch /></Link></li>
-                                <li className='p-2'><Link href="/wishlist"><GoHeart /></Link></li>
-                                <li className='p-2'><Link href="/cart"><IoBagHandleOutline /></Link></li>
-                                <li className='p-2'><Link href="/profile"><CgProfile /></Link></li>
+                                <li className='p-2 text-lg hover:bg-[#2f757c]'><Link href="/search"><CiSearch /></Link></li>
+                                <li className='p-2 text-lg relative hover:bg-[#2f757c]'><Link href="/wishlist"><GoHeart /></Link>
+                                    {wishlistCount >= 1 && <span className='absolute top-[-6px] right-0  px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>{wishlistCount}</span>}
+                                </li>
+                                <li className='p-2 text-lg relative hover:bg-[#2f757c]'><Link href="/carts"><IoBagHandleOutline /></Link>
+                                    {cart.length >= 1 && <span className='absolute top-[-6px] right-0  px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>{cart.length}</span>}
+                                </li>
+                                <li className='p-2 text-lg hover:bg-[#2f757c]'><Link href="/profile"><CgProfile /></Link></li>
                             </ul>
                         </div>
                     </div>
@@ -151,7 +158,7 @@ function HeaderContent() {
                 {pathname !== '/' && (
                     <div className='flex justify-center items-center h-52'>
                         <p className='text-3xl font-medium'>
-                            {navLinks.find(link => link.href === pathname)?.label || "Not Found"}
+                            {pathname}
                         </p>
                     </div>
                 )}

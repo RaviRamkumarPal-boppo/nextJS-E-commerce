@@ -176,75 +176,173 @@ const footerObj = [
 
 const ProductsPageObj = [
     {
+        id: 1,
         image: product1,
-        title: "Product 1",
+        title: "Product1",
         oldPrice: 100,
-        price: 70
+        price: 70,
+        description: "A high-quality product that offers great value for money.",
+        reviews: 120,
+        rating: 4.5,
+        sold: 340,
+        count: 120,
+        productCode: "P1-100"
     }, {
+        id: 2,
         image: product2,
-        title: "Product 2",
+        title: "Product2",
         oldPrice: 120,
-        price: 84
+        price: 84,
+        description: "This product combines functionality with style.",
+        reviews: 98,
+        rating: 4.2,
+        sold: 275,
+        count: 120,
+        productCode: "P2-120"
     }, {
+        id: 3,
         image: product3,
-        title: "Product 3",
+        title: "Product3",
         oldPrice: 150,
-        price: 105
+        price: 105,
+        description: "An essential product that meets all your needs.",
+        reviews: 150,
+        rating: 4.6,
+        sold: 310,
+        count: 120,
+        productCode: "P3-150"
     }, {
+        id: 4,
         image: product4,
-        title: "Product 4",
+        title: "Product4",
         oldPrice: 200,
-        price: 140
+        price: 140,
+        description: "Top-of-the-line product with exceptional features.",
+        reviews: 200,
+        rating: 4.8,
+        sold: 450,
+        count: 120,
+        productCode: "P4-200"
     }, {
+        id: 5,
         image: product5,
-        title: "Product 5",
+        title: "Product5",
         oldPrice: 80,
-        price: 56
+        price: 56,
+        description: "Affordable product without compromising quality.",
+        reviews: 80,
+        rating: 4.0,
+        sold: 180,
+        count: 120,
+        productCode: "P5-80"
     }, {
+        id: 6,
         image: product6,
-        title: "Product 6",
+        title: "Product6",
         oldPrice: 80,
-        price: 55
+        price: 55,
+        description: "Reliable and efficient product for daily use.",
+        reviews: 75,
+        rating: 3.9,
+        sold: 160,
+        count: 120,
+        productCode: "P6-80"
     }, {
+        id: 7,
         image: product7,
-        title: "Product 7",
+        title: "Product7",
         oldPrice: 140,
-        price: 98
+        price: 98,
+        description: "High-performance product with sleek design.",
+        reviews: 130,
+        rating: 4.3,
+        sold: 290,
+        count: 120,
+        productCode: "P7-140"
     }, {
+        id: 8,
         image: product8,
-        title: "Product 8",
+        title: "Product8",
         oldPrice: 90,
-        price: 63
+        price: 63,
+        description: "Compact and versatile product for all occasions.",
+        reviews: 90,
+        rating: 4.1,
+        sold: 220,
+        count: 120,
+        productCode: "P8-90"
     }, {
+        id: 9,
         image: product9,
-        title: "Product 9",
+        title: "Product9",
         oldPrice: 110,
-        price: 77
+        price: 77,
+        description: "An innovative product that exceeds expectations.",
+        reviews: 110,
+        rating: 4.4,
+        sold: 250,
+        count: 120,
+        productCode: "P9-110"
     }, {
+        id: 10,
         image: product10,
-        title: "Product 10",
+        title: "Product10",
         oldPrice: 130,
-        price: 91
+        price: 91,
+        description: "Durable product that ensures long-term satisfaction.",
+        reviews: 140,
+        rating: 4.5,
+        sold: 300,
+        count: 120,
+        productCode: "P10-130"
     }, {
+        id: 11,
         image: product11,
-        title: "Product 11",
+        title: "Product11",
         oldPrice: 90,
-        price: 52
+        price: 52,
+        description: "Economical product with top-notch features.",
+        reviews: 70,
+        rating: 3.8,
+        sold: 150,
+        count: 120,
+        productCode: "P11-90"
     }, {
+        id: 12,
         image: product12,
-        title: "Product 12",
+        title: "Product12",
         oldPrice: 160,
-        price: 112
+        price: 112,
+        description: "A premium product designed for the discerning customer.",
+        reviews: 160,
+        rating: 4.7,
+        sold: 320,
+        count: 120,
+        productCode: "P12-160"
     }, {
+        id: 13,
         image: product13,
-        title: "Product 13",
+        title: "Product13",
         oldPrice: 180,
-        price: 126
+        price: 126,
+        description: "Exclusive product offering superior performance.",
+        reviews: 180,
+        rating: 4.8,
+        sold: 400,
+        count: 120,
+        productCode: "P13-180"
     }, {
+        id: 14,
         image: product14,
-        title: "Product 14",
+        title: "Product14",
         oldPrice: 130,
-        price: 87
+        price: 87,
+        description: "Stylish and efficient product for modern living.",
+        reviews: 125,
+        rating: 4.3,
+        sold: 280,
+        count: 120,
+        productCode: "P14-130"
     }
 ]
 
