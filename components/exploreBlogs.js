@@ -12,7 +12,7 @@ function ExploreBlogs() {
             <div className="flex justify-between items-center mb-10">
                 <p className="text-xl lg:text-4xl font-medium">Trending products for you!</p>
                 <div className="text-white ">
-                    <button className="bg-[#ffa906] text-center font-medium py-3 px-10 border-white rounded-full ">
+                    <button className="animated-button bg-[#ffa906] text-center font-medium py-3 px-10 border-white rounded-full ">
                         <span className='flex items-center text-sm sm:text-xl'>View All Product&#160;<FaArrowRightLong /></span>
                     </button>
                 </div>

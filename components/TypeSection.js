@@ -79,7 +79,7 @@ function TypeSection() {
 
                                             <div className='col-span-1'>
                                                 <p className='my-3'>
-                                                    <span className='text-[#3b3836] text-sm font-medium bg-white p-2 my-3 rounded-full '>NEW COLLECTION</span>
+                                                    <span class="text-[#3b3836] font-medium bg-white tracking-widest p-2 my-3 rounded-full px-5 ">NEW COLLECTION</span>
                                                 </p>
                                                 <p className='py-4 font-medium text-[#3b3836] text-xl'>Lighting Lamp</p>
                                                 <ul className='leading-7'>
