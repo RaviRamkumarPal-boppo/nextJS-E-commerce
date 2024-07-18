@@ -1,18 +1,26 @@
-import { create } from 'zustand';
+import create from 'zustand';
 import { persist } from 'zustand/middleware';
 
 const useStateStore = create(persist(
   (set) => ({
-    wishlistCount: 0,
-    quantity: 1, 
-    cart: [], 
-    
+    wishlistCount: [],
+    cart: [],
+    quantities: {},
 
-    updateWishlistCount: (count) => set({ wishlistCount: count }),
-    updateQuantity: () => set((state) => ({ quantity: state.quantity + 1 })),
-    removeQuantity: () => set((state) => ({ quantity: state.quantity - 1 })),
-    updateCart: (count) => set({ cart: count }),
-
+    updateWishlistCount: (wishlistCount) => set({ wishlistCount }),
+    updateQuantity: (title) => set((state) => ({
+      quantities: {
+        ...state.quantities,
+        [title]: (state.quantities[title] || 1) + 1,
+      },
+    })),
+    removeQuantity: (title) => set((state) => ({
+      quantities: {
+        ...state.quantities,
+        [title]: Math.max((state.quantities[title] || 1) - 1, 1),
+      },
+    })),
+    updateCart: (cart) => set({ cart }),
   }),
   {
     name: 'zustand-storage',

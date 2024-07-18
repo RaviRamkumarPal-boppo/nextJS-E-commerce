@@ -3,74 +3,96 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
 .active-Link {
-    border-bottom: 3px solid #d09423;
-    font-weight: 500;
+  border-bottom: 3px solid #d09423;
+  font-weight: 500;
 }
 
 .mobile-active-Link {
-    font-weight: 500;
-    background-color: #3b6165;
+  font-weight: 500;
+  background-color: #3b6165;
 }
 
 .header-bg,
 .footer-bg {
-    background: linear-gradient(to bottom, #264d51, #3b6165);
+  background: linear-gradient(to bottom, #264d51, #3b6165);
 }
 
 .swiper-pagination-bullet {
-    padding: 7px !important;
+  padding: 7px !important;
 }
 
 .swiper-pagination-bullet-active {
-    padding: 7px !important;
-    width: 55px !important;
-    border-radius: 10px !important;
-    background-color: #2d5356 !important;
+  padding: 7px !important;
+  width: 55px !important;
+  border-radius: 10px !important;
+  background-color: #2d5356 !important;
 }
 
 @media (min-width: 426px) {
-    .header-section-image {
-        .header-image-1,
-        .header-image-2,
-        .header-image-3 {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .header-image-1:hover {
-            width: 500px;
-        }
-
-        .header-image-1:hover .header-image-2 {
-            width: 100px;
-        }
-
-        .header-image-1:hover .header-image-3 {
-            width: 100px;
-        }
-
-        .header-image-2:hover .header-image-1 {
-            width: 100px;
-        }
-
-        .header-image-2:hover {
-            width: 500px;
-        }
-
-        .header-image-2:hover .header-image-3 {
-            width: 100px;
-        }
-
-        .header-image-3:hover .header-image-1 {
-            width: 100px;
-        }
-
-        .header-image-3:hover .header-image-2 {
-            width: 100px;
-        }
-
-        .header-image-3:hover {
-            width: 500px;
-        }
+  .header-section-image {
+    .header-image-1,
+    .header-image-2,
+    .header-image-3 {
+      transition: all 0.3s ease-in-out;
     }
+
+    .header-image-1:hover {
+      width: 500px;
+    }
+
+    .header-image-1:hover .header-image-2 {
+      width: 100px;
+    }
+
+    .header-image-1:hover .header-image-3 {
+      width: 100px;
+    }
+
+    .header-image-2:hover .header-image-1 {
+      width: 100px;
+    }
+
+    .header-image-2:hover {
+      width: 500px;
+    }
+
+    .header-image-2:hover .header-image-3 {
+      width: 100px;
+    }
+
+    .header-image-3:hover .header-image-1 {
+      width: 100px;
+    }
+
+    .header-image-3:hover .header-image-2 {
+      width: 100px;
+    }
+
+    .header-image-3:hover {
+      width: 500px;
+    }
+  }
 }

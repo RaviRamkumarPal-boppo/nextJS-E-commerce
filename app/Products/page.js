@@ -54,7 +54,6 @@ function Products() {
   const handleRangeChange = (e) => {
     const newValue = Number(e.target.value);
     setPriceRange([priceRange[0], newValue]);
-    toast.info(`Price range set to $${priceRange[0]} - $${newValue}`); // Show toast notification
   };
 
   useEffect(() => {
@@ -143,7 +142,7 @@ function Products() {
           </div>
         </div>
       </div>
-      <ToastContainer /> 
+      <ToastContainer position='bottom-center' /> 
     </div>
   );
 }

@@ -1,13 +1,15 @@
-import React from 'react'
-import TypeSection from '@/components/TypeSection'
+import React, { lazy, Suspense } from 'react';
 
+const TypeSection = lazy(() => import('@/components/TypeSection'));
 
 function Home() {
   return (
     <div>
-      <TypeSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <TypeSection />
+      </Suspense>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
