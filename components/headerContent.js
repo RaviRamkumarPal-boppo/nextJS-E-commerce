@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Bedroom from '@/public/pal/bedroom.jpg';
 import Livingroom from '@/public/pal/livingroom.jpg';
 import Waitingroom from '@/public/pal/waitingroom.jpg';
-import { FaArrowRightLong } from 'react-icons/fa6';
+import { FaArrowRightLong, FaBars, FaTimes } from 'react-icons/fa6';
 import Link from 'next/link';
 import { CiSearch } from 'react-icons/ci';
 import { GoHeart } from 'react-icons/go';
@@ -13,10 +13,10 @@ import { IoBagHandleOutline } from 'react-icons/io5';
 import { CgProfile } from 'react-icons/cg';
 import { usePathname } from 'next/navigation';
 import useStateStore from "@/components/zustand";
-import { FaBars, FaTimes } from 'react-icons/fa';
 import CountUp from 'react-countup';
 import Modal from '@/components/modules/modal';
 
+// Navigation links
 const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/Products', label: 'Products' },
@@ -26,9 +26,10 @@ const navLinks = [
     { href: '/blog', label: 'Blog' },
 ];
 
+// NavLink component
 function NavLink({ href, label, pathname }) {
     return (
-        <li>
+        <li className='p-2'>
             <Link href={href} className={`px-2 lg:px-4 py-2 ${pathname === href ? 'active-Link' : ''}`}>
                 {label}
             </Link>
@@ -36,12 +37,18 @@ function NavLink({ href, label, pathname }) {
     );
 }
 
+// HeaderContent component
 function HeaderContent() {
     const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { wishlistCount, cart } = useStateStore();
+    const { wishlistCount, cart, updateSearchTerm } = useStateStore();
+
+    const handleSearchModel = () => {
+        updateSearchTerm('');
+        setIsModalOpen(true);
+    }
 
     return (
         <div className='header-bg text-white'>
@@ -66,37 +73,36 @@ function HeaderContent() {
                                 >
                                     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                                 </button>
-                                <li className='p-2 text-lg hover:bg-[#2f757c]'
-                                    onClick={() => setIsModalOpen(true)}
-                                >
+                                <li className='p-2 text-2xl hover:bg-[#2f757c]' onClick={handleSearchModel}>
                                     <CiSearch />
                                 </li>
-                                <li className='p-2 text-lg relative hover:bg-[#2f757c]'>
+                                <li className='p-2 text-2xl relative hover:bg-[#2f757c]'>
                                     <Link href="/wishlist">
                                         <GoHeart />
+                                        {wishlistCount.length >= 1 && (
+                                            <span className='absolute top-[-6px] right-0 px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>
+                                                {wishlistCount.length}
+                                            </span>
+                                        )}
                                     </Link>
-                                    {wishlistCount >= 1 && (
-                                        <span className='absolute top-[-6px] right-0 px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>
-                                            {wishlistCount}
-                                        </span>
-                                    )}
                                 </li>
-                                <li className='p-2 text-lg relative hover:bg-[#2f757c]'>
+                                <li className='p-2 text-2xl relative hover:bg-[#2f757c]'>
                                     <Link href="/carts">
                                         <IoBagHandleOutline />
+                                        {cart.length >= 1 && (
+                                            <span className='absolute top-[-6px] right-0 px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>
+                                                {cart.length}
+                                            </span>
+                                        )}
                                     </Link>
-                                    {cart.length >= 1 && (
-                                        <span className='absolute top-[-6px] right-0 px-[5px] py-[1px] text-xs bg-[#d09423] rounded-full'>
-                                            {cart.length}
-                                        </span>
-                                    )}
                                 </li>
-                                <li className='p-2 text-lg hover:bg-[#2f757c]'>
+                                <li className='p-2 text-2xl hover:bg-[#2f757c]'>
                                     <Link href="/profile">
                                         <CgProfile />
                                     </Link>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                     {isMobileMenuOpen && (
@@ -116,7 +122,7 @@ function HeaderContent() {
                         <div className='flex justify-center lg:justify-end items-center px-3'>
                             <div className='w-full sm:w-9/12'>
                                 <div className='flex justify-center sm:justify-start'>
-                                    <span className='bg-[#426367] tracking-widest p-2 rounded-full px-3 animate-pulse'>FURNITURE DESIGNS IDEAS</span>
+                                    <p className='bg-[#426367] tracking-widest p-2 rounded-full px-3 animate-pulse'>FURNITURE DESIGNS IDEAS</p>
                                 </div>
                                 <div className='mt-4 mb-5 sm:mb-10 flex justify-center'>
                                     <p className='text-[38px] sm:text-[67px] font-medium sm:leading-[77px]'>Modern Interior Design Studio</p>
@@ -165,7 +171,7 @@ function HeaderContent() {
                                 <div className="absolute bottom-0 w-full h-[300px] bg-gradient-to-t from-black/90 to-transparent rounded-bl-lg rounded-br-lg"></div>
                                 <div className="absolute bottom-0 w-full h-[100px] flex flex-row justify-between items-center p-6 z-10">
                                     <p className="text-2xl text-white">Bed Room</p>
-                                    <p className="text-2xl text-white flex items-center">1200+&#160;<span className="text-lg">items</span></p>
+                                    <p className="text-2xl text-white flex items-center">1200+&#160;<p className="text-lg">items</p></p>
                                 </div>
                             </div>
                             <div className='w-full sm:w-[150px] h-[20rem] lg:h-[35rem] relative header-image-2'>

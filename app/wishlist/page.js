@@ -7,24 +7,25 @@ import useStateStore from "@/components/zustand";
 
 function Wishlist() {
   const { wishlistCount } = useStateStore();
-  const newProducts = ProductsPageObj.ProductsPageObj;
-  const [data, setData] = useState();
+  const newProducts = ProductsPageObj?.ProductsPageObj;
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    const wishlistProducts = newProducts.filter((item) =>
-      wishlistCount.includes(item.title)
-    );
-    setData(wishlistProducts);
+    if (newProducts) {
+      const wishlistProducts = newProducts.filter((item) =>
+        wishlistCount?.includes(item.title)
+      );
+      setData(wishlistProducts);
+    }
   }, [newProducts, wishlistCount]);
 
   return (
     <div className="my-[6rem] w-9/12 mx-auto">
       <p className="text-2xl font-medium text-[#464545] pb-5">
-        Showing {data?.length || []}
-        {newProducts.length === 1 ? "result" : "results"}
+        Showing {data.length} {data.length === 1 ? "result" : "results"}
       </p>
       <ProductsCards
-        productData={data || []}
+        productData={data}
         imageStyle={"w-[270px] h-[250px] object-contain"}
       />
     </div>

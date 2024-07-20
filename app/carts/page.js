@@ -1,41 +1,40 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from "react";
-import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import { FiMinus, FiPlus } from "react-icons/fi";
-import data from "@/components/modules/JSON";
-import { IoIosCloseCircleOutline } from "react-icons/io";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
-import Link from "next/link";
-import Image from "next/image";
-import useStateStore from "@/components/zustand";
+
+import React, { useEffect, useState } from 'react';
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
+import { FiMinus, FiPlus } from 'react-icons/fi';
+import data from '@/components/modules/JSON';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import useStateStore from '@/components/zustand';
 
 function Carts() {
   const {
     quantities,
-    updateWishlistCount,
-    updateQuantity,
-    removeQuantity,
     cart,
-    updateCart,
+    increaseQuantity,
+    decreaseQuantity,
+    removeFromCart,
   } = useStateStore();
   const [productData, setProductData] = useState([]);
 
-  const handleAddQuantity = (index) => {
-    updateQuantity(index);
-    toast.info("Increased quantity"); // Show toast notification
+  const handleAddQuantity = (title) => {
+    increaseQuantity(title);
+    toast.info('Increased quantity');
   };
 
-  const handleRemoveQuantity = (index) => {
-    removeQuantity(index);
-    toast.info("Decreased quantity"); // Show toast notification
+  const handleRemoveQuantity = (title) => {
+    decreaseQuantity(title);
+    toast.info('Decreased quantity');
   };
 
   const handleRemoveCartProduct = (index) => {
     const removedProduct = productData[index];
-    const updatedCart = cart.filter((item) => item !== removedProduct.title);
-    updateCart(updatedCart);
+    removeFromCart(removedProduct.title);
 
     setProductData((prev) => {
       const updatedProducts = [...prev];
@@ -43,12 +42,8 @@ function Carts() {
       return updatedProducts;
     });
 
-    delete quantities[removedProduct.title];
-
-    toast.success("Removed item from cart"); 
+    toast.success('Removed item from cart');
   };
-
-  console.log({quantities});
 
   useEffect(() => {
     if (Array.isArray(cart)) {
@@ -57,14 +52,13 @@ function Carts() {
       );
       setProductData(cartData || []);
     } else {
-      console.error("Cart is not an array");
+      console.error('Cart is not an array');
       setProductData([]);
     }
   }, [cart]);
 
-  // Calculate subtotal and total
   const subtotal = productData.reduce(
-    (acc, item, index) => acc + (quantities[item.title] || 1) * item.price,
+    (acc, item) => acc + (quantities[item.title] || 1) * item.price,
     0
   );
   const shipping = 0;
@@ -80,7 +74,7 @@ function Carts() {
             className="flex items-center hover:underline mt-4"
           >
             <FaArrowLeftLong className="p-2 text-4xl text-[#d09423]" />
-            <span className="text-xl text-[#d09423]">Back to products</span>
+            <p className="text-xl text-[#d09423]">Back to products</p>
           </Link>
         </div>
       ) : (
@@ -96,7 +90,7 @@ function Carts() {
                   <th className="py-3 px-6 text-left font-medium"></th>
                 </tr>
               </thead>
-              <tbody className="pb-5">
+              <tbody className="pb-5 cursor-pointer">
                 {productData.map((item, index) => (
                   <tr key={item.title} className="bg-[#f5f5f5] text-[#656565]">
                     <td className="py-3 px-6">
@@ -135,7 +129,7 @@ function Carts() {
                     </td>
                     <td className="py-3 px-6">
                       <IoIosCloseCircleOutline
-                        className="text-3xl"
+                        className="text-3xl cursor-pointer"
                         onClick={() => handleRemoveCartProduct(index)}
                       />
                     </td>
