@@ -15,7 +15,6 @@ import ProductsPageObj from "@/components/modules/JSON";
 import { FaArrowLeft, FaStar } from "react-icons/fa6";
 
 function ProductDetails({ params }) {
-  const pathname = usePathname();
   const [productDetail, setProductDetail] = useState(null);
   const {
     quantities,

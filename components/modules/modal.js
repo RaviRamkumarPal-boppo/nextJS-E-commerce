@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { IoSearchSharp } from 'react-icons/io5';
 import { MdClose } from 'react-icons/md';
-import { useRouter } from 'next/navigation';  // Correct import
+import { useRouter } from 'next/navigation';  
 import ProductsPageObj from '@/components/modules/JSON';
 import useStateStore from '../zustand';
+import { CiSearch } from 'react-icons/ci';
 
 function Modal({ isOpen, onClose }) {
     const products = ProductsPageObj.ProductsPageObj;
@@ -76,10 +77,10 @@ function Modal({ isOpen, onClose }) {
                             {searchResults.map((item) => (
                                 <li
                                     key={item.id}
-                                    className="p-3 text-[#686664] hover:bg-[#f1f1f1] font-medium cursor-pointer"
+                                    className="flex items-center p-3 text-[#686664] hover:bg-[#f1f1f1] font-medium cursor-pointer"
                                     onClick={() => handleSearchOption(item.title)}
                                 >
-                                    {item.title}
+                                    <CiSearch className="text-4xl bg-[#efefef] rounded-full p-2 " />&#160; {item.title}
                                 </li>
                             ))}
                         </ul>

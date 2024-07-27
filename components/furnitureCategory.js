@@ -8,9 +8,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-function FurnitureCategory({ productObj,title }) {
+function FurnitureCategory({ productObj, title }) {
     const swiperRef = useRef(null);
+
+    const pathname = usePathname();
 
     return (
         <div className="my-[100px]">
@@ -72,9 +76,11 @@ function FurnitureCategory({ productObj,title }) {
                             productObj.map((s, index) => (
                                 <SwiperSlide key={index} className="flex justify-center items-center">
                                     <div className="text-center">
-                                        <div className="p-9 bg-[#f5f5f5] rounded-full flex justify-center items-center w-[200px] h-[200px] mx-auto">
-                                            <Image src={s.image} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" />
-                                        </div>
+                                        <Link href={`/Products/${s.title}/product-details`}>
+                                            <div className="p-9 bg-[#f5f5f5] rounded-full flex justify-center items-center w-[200px] h-[200px] mx-auto">
+                                                <Image src={s.image} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" />
+                                            </div>
+                                        </Link>
                                         <div className="mt-5">
                                             <p className="text-lg font-medium mb-1">{s.title}</p>
                                             <p className="text-xs text-[#403e3e]">Discover {s.count} Products</p>
@@ -94,4 +100,3 @@ function FurnitureCategory({ productObj,title }) {
 }
 
 export default FurnitureCategory;
- 

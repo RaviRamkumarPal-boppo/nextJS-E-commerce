@@ -10,7 +10,6 @@ import Link from 'next/link';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Initialize the toast container in your app root or a higher-level component
 const notify = (message) => toast(message);
 
 function ProductsCards({ productData, imageStyle }) {

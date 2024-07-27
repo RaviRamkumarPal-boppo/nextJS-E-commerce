@@ -4,12 +4,6 @@
 @tailwind utilities;
 
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -17,9 +11,16 @@ body {
 }
 
 
-main {
-    flex: 1;
+header {
+    position: sticky;
+    top: 0;
+    bottom: 0; 
+    z-index: 1000;
+
 }
+
+
+
 
 .active-Link {
     border-bottom: 3px solid #d09423;

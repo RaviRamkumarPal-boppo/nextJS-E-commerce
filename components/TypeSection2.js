@@ -47,7 +47,7 @@ function TypeSection2() {
                             <div className='w-6/12'>
                                 <p className='py-4 font-semibold text-[#3b3836] text-2xl'>Vintage Leather Armchair</p>
                                 <p className='text-[#656463]'>Bring a touch of retro charm to your home with this vintage leather armchair. Sturdy construction ensures durability.</p>
-                                <button className='flex items-center text-white text-lg bg-[#d09423] py-3 px-10 my-5 rounded-full'>Shop Now&#160;<FaArrowRightLong /></button>
+                                <button className='animated-button flex items-center text-white text-lg bg-[#ffa906] py-3 px-10 my-5 rounded-full'>Shop Now&#160;<FaArrowRightLong /></button>
                             </div>
                         </div>
                     </div>

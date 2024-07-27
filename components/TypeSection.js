@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CgArrowsExchange } from 'react-icons/cg';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { FiTruck } from 'react-icons/fi';
@@ -13,9 +15,21 @@ import ExploreBlogs from '@/components/exploreBlogs';
 import TypeSection2 from '@/components/TypeSection2';
 import Clientsection from '@/components/clientsection';
 import data from '@/components/modules/JSON';
+import { useRouter } from 'next/navigation';
 import FurnitureCategory from './furnitureCategory';
 
 function TypeSection() {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    const HandleRedirectProducts = () => {
+        router.push('/Products')
+    }
+
     return (
         <div className='py-10 flex justify-center'>
             <div className='w-full px-4 sm:w-10/12'>
@@ -56,7 +70,9 @@ function TypeSection() {
                                             <li>Wooden table</li>
                                             <li>Glass table</li>
                                         </ul>
-                                        <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8'>
+                                        <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8 cursor-pointer'
+                                            onClick={HandleRedirectProducts}
+                                        >
                                             View All&#160;<FaArrowRightLong />
                                         </p>
                                     </div>
@@ -82,7 +98,9 @@ function TypeSection() {
                                                     <li>Table lamps</li>
                                                     <li>Study lamps</li>
                                                 </ul>
-                                                <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8'>
+                                                <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8 cursor-pointer'
+                                                    onClick={HandleRedirectProducts}
+                                                >
                                                     View All&#160;<FaArrowRightLong />
                                                 </p>
                                             </div>
@@ -117,7 +135,10 @@ function TypeSection() {
                                 <li>Café chair</li>
                                 <li>Wheels chair</li>
                             </ul>
-                            <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8'>
+                            <p className='flex items-center py-5 text-[#72898d] underline underline-offset-8 cursor-pointer'
+                                onClick={HandleRedirectProducts}
+
+                            >
                                 View All&#160;<FaArrowRightLong />
                             </p>
                             <div className='w-[200px] h-[300px] lg:w-[300px] lg:h-[400px] float-end'>
